@@ -1,0 +1,15 @@
+C:\Users\Student\source\repos\michaelwork\michaelwork\bin\Debug\net6.0\michaelwork.exe
+C:\Users\Student\source\repos\michaelwork\michaelwork\bin\Debug\net6.0\michaelwork.deps.json
+C:\Users\Student\source\repos\michaelwork\michaelwork\bin\Debug\net6.0\michaelwork.runtimeconfig.json
+C:\Users\Student\source\repos\michaelwork\michaelwork\bin\Debug\net6.0\michaelwork.dll
+C:\Users\Student\source\repos\michaelwork\michaelwork\bin\Debug\net6.0\michaelwork.pdb
+C:\Users\Student\source\repos\michaelwork\michaelwork\obj\Debug\net6.0\michaelwork.csproj.AssemblyReference.cache
+C:\Users\Student\source\repos\michaelwork\michaelwork\obj\Debug\net6.0\michaelwork.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Student\source\repos\michaelwork\michaelwork\obj\Debug\net6.0\michaelwork.AssemblyInfoInputs.cache
+C:\Users\Student\source\repos\michaelwork\michaelwork\obj\Debug\net6.0\michaelwork.AssemblyInfo.cs
+C:\Users\Student\source\repos\michaelwork\michaelwork\obj\Debug\net6.0\michaelwork.csproj.CoreCompileInputs.cache
+C:\Users\Student\source\repos\michaelwork\michaelwork\obj\Debug\net6.0\michaelwork.dll
+C:\Users\Student\source\repos\michaelwork\michaelwork\obj\Debug\net6.0\refint\michaelwork.dll
+C:\Users\Student\source\repos\michaelwork\michaelwork\obj\Debug\net6.0\michaelwork.pdb
+C:\Users\Student\source\repos\michaelwork\michaelwork\obj\Debug\net6.0\michaelwork.genruntimeconfig.cache
+C:\Users\Student\source\repos\michaelwork\michaelwork\obj\Debug\net6.0\ref\michaelwork.dll

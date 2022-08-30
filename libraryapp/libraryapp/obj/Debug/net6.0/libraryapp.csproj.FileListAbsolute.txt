@@ -1,0 +1,15 @@
+C:\Users\Student\source\repos\libraryapp\libraryapp\bin\Debug\net6.0\libraryapp.exe
+C:\Users\Student\source\repos\libraryapp\libraryapp\bin\Debug\net6.0\libraryapp.deps.json
+C:\Users\Student\source\repos\libraryapp\libraryapp\bin\Debug\net6.0\libraryapp.runtimeconfig.json
+C:\Users\Student\source\repos\libraryapp\libraryapp\bin\Debug\net6.0\libraryapp.dll
+C:\Users\Student\source\repos\libraryapp\libraryapp\bin\Debug\net6.0\libraryapp.pdb
+C:\Users\Student\source\repos\libraryapp\libraryapp\obj\Debug\net6.0\libraryapp.csproj.AssemblyReference.cache
+C:\Users\Student\source\repos\libraryapp\libraryapp\obj\Debug\net6.0\libraryapp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Student\source\repos\libraryapp\libraryapp\obj\Debug\net6.0\libraryapp.AssemblyInfoInputs.cache
+C:\Users\Student\source\repos\libraryapp\libraryapp\obj\Debug\net6.0\libraryapp.AssemblyInfo.cs
+C:\Users\Student\source\repos\libraryapp\libraryapp\obj\Debug\net6.0\libraryapp.csproj.CoreCompileInputs.cache
+C:\Users\Student\source\repos\libraryapp\libraryapp\obj\Debug\net6.0\libraryapp.dll
+C:\Users\Student\source\repos\libraryapp\libraryapp\obj\Debug\net6.0\refint\libraryapp.dll
+C:\Users\Student\source\repos\libraryapp\libraryapp\obj\Debug\net6.0\libraryapp.pdb
+C:\Users\Student\source\repos\libraryapp\libraryapp\obj\Debug\net6.0\libraryapp.genruntimeconfig.cache
+C:\Users\Student\source\repos\libraryapp\libraryapp\obj\Debug\net6.0\ref\libraryapp.dll

@@ -1,0 +1,8 @@
+C:\Users\Student\source\repos\WorkingFiles\WorkingFiles\bin\Debug\WorkingFiles.exe.config
+C:\Users\Student\source\repos\WorkingFiles\WorkingFiles\bin\Debug\WorkingFiles.exe
+C:\Users\Student\source\repos\WorkingFiles\WorkingFiles\bin\Debug\WorkingFiles.pdb
+C:\Users\Student\source\repos\WorkingFiles\WorkingFiles\obj\Debug\WorkingFiles.csproj.AssemblyReference.cache
+C:\Users\Student\source\repos\WorkingFiles\WorkingFiles\obj\Debug\WorkingFiles.csproj.SuggestedBindingRedirects.cache
+C:\Users\Student\source\repos\WorkingFiles\WorkingFiles\obj\Debug\WorkingFiles.csproj.CoreCompileInputs.cache
+C:\Users\Student\source\repos\WorkingFiles\WorkingFiles\obj\Debug\WorkingFiles.exe
+C:\Users\Student\source\repos\WorkingFiles\WorkingFiles\obj\Debug\WorkingFiles.pdb

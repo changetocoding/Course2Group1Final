@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileMoverApp", "FileMoverApp\FileMoverApp.csproj", "{A11B326F-9C8F-4B73-9F45-985DA26FCCAE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A11B326F-9C8F-4B73-9F45-985DA26FCCAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A11B326F-9C8F-4B73-9F45-985DA26FCCAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A11B326F-9C8F-4B73-9F45-985DA26FCCAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A11B326F-9C8F-4B73-9F45-985DA26FCCAE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {53F7A24D-D29E-43C0-97F3-A7113F6ABD5B}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,8 @@
+C:\Users\Student\source\repos\practical\practical\bin\Debug\practical.exe.config
+C:\Users\Student\source\repos\practical\practical\bin\Debug\practical.exe
+C:\Users\Student\source\repos\practical\practical\bin\Debug\practical.pdb
+C:\Users\Student\source\repos\practical\practical\obj\Debug\practical.csproj.AssemblyReference.cache
+C:\Users\Student\source\repos\practical\practical\obj\Debug\practical.csproj.SuggestedBindingRedirects.cache
+C:\Users\Student\source\repos\practical\practical\obj\Debug\practical.csproj.CoreCompileInputs.cache
+C:\Users\Student\source\repos\practical\practical\obj\Debug\practical.exe
+C:\Users\Student\source\repos\practical\practical\obj\Debug\practical.pdb

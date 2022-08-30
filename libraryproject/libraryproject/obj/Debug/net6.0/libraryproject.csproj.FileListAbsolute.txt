@@ -1,0 +1,15 @@
+C:\Users\Student\source\repos\libraryproject\libraryproject\bin\Debug\net6.0\libraryproject.exe
+C:\Users\Student\source\repos\libraryproject\libraryproject\bin\Debug\net6.0\libraryproject.deps.json
+C:\Users\Student\source\repos\libraryproject\libraryproject\bin\Debug\net6.0\libraryproject.runtimeconfig.json
+C:\Users\Student\source\repos\libraryproject\libraryproject\bin\Debug\net6.0\libraryproject.dll
+C:\Users\Student\source\repos\libraryproject\libraryproject\bin\Debug\net6.0\libraryproject.pdb
+C:\Users\Student\source\repos\libraryproject\libraryproject\obj\Debug\net6.0\libraryproject.csproj.AssemblyReference.cache
+C:\Users\Student\source\repos\libraryproject\libraryproject\obj\Debug\net6.0\libraryproject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Student\source\repos\libraryproject\libraryproject\obj\Debug\net6.0\libraryproject.AssemblyInfoInputs.cache
+C:\Users\Student\source\repos\libraryproject\libraryproject\obj\Debug\net6.0\libraryproject.AssemblyInfo.cs
+C:\Users\Student\source\repos\libraryproject\libraryproject\obj\Debug\net6.0\libraryproject.csproj.CoreCompileInputs.cache
+C:\Users\Student\source\repos\libraryproject\libraryproject\obj\Debug\net6.0\libraryproject.dll
+C:\Users\Student\source\repos\libraryproject\libraryproject\obj\Debug\net6.0\refint\libraryproject.dll
+C:\Users\Student\source\repos\libraryproject\libraryproject\obj\Debug\net6.0\libraryproject.pdb
+C:\Users\Student\source\repos\libraryproject\libraryproject\obj\Debug\net6.0\libraryproject.genruntimeconfig.cache
+C:\Users\Student\source\repos\libraryproject\libraryproject\obj\Debug\net6.0\ref\libraryproject.dll

@@ -1,0 +1,8 @@
+C:\Users\Student\source\repos\Scholarship\Scholarship\bin\Debug\Scholarship.exe.config
+C:\Users\Student\source\repos\Scholarship\Scholarship\bin\Debug\Scholarship.exe
+C:\Users\Student\source\repos\Scholarship\Scholarship\bin\Debug\Scholarship.pdb
+C:\Users\Student\source\repos\Scholarship\Scholarship\obj\Debug\Scholarship.csproj.AssemblyReference.cache
+C:\Users\Student\source\repos\Scholarship\Scholarship\obj\Debug\Scholarship.csproj.SuggestedBindingRedirects.cache
+C:\Users\Student\source\repos\Scholarship\Scholarship\obj\Debug\Scholarship.csproj.CoreCompileInputs.cache
+C:\Users\Student\source\repos\Scholarship\Scholarship\obj\Debug\Scholarship.exe
+C:\Users\Student\source\repos\Scholarship\Scholarship\obj\Debug\Scholarship.pdb

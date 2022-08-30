@@ -1,0 +1,15 @@
+C:\Users\Student\source\repos\MIRACLE1\MIRACLE1\bin\Debug\net6.0\MIRACLE1.exe
+C:\Users\Student\source\repos\MIRACLE1\MIRACLE1\bin\Debug\net6.0\MIRACLE1.deps.json
+C:\Users\Student\source\repos\MIRACLE1\MIRACLE1\bin\Debug\net6.0\MIRACLE1.runtimeconfig.json
+C:\Users\Student\source\repos\MIRACLE1\MIRACLE1\bin\Debug\net6.0\MIRACLE1.dll
+C:\Users\Student\source\repos\MIRACLE1\MIRACLE1\bin\Debug\net6.0\ref\MIRACLE1.dll
+C:\Users\Student\source\repos\MIRACLE1\MIRACLE1\bin\Debug\net6.0\MIRACLE1.pdb
+C:\Users\Student\source\repos\MIRACLE1\MIRACLE1\obj\Debug\net6.0\MIRACLE1.csproj.AssemblyReference.cache
+C:\Users\Student\source\repos\MIRACLE1\MIRACLE1\obj\Debug\net6.0\MIRACLE1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Student\source\repos\MIRACLE1\MIRACLE1\obj\Debug\net6.0\MIRACLE1.AssemblyInfoInputs.cache
+C:\Users\Student\source\repos\MIRACLE1\MIRACLE1\obj\Debug\net6.0\MIRACLE1.AssemblyInfo.cs
+C:\Users\Student\source\repos\MIRACLE1\MIRACLE1\obj\Debug\net6.0\MIRACLE1.csproj.CoreCompileInputs.cache
+C:\Users\Student\source\repos\MIRACLE1\MIRACLE1\obj\Debug\net6.0\MIRACLE1.dll
+C:\Users\Student\source\repos\MIRACLE1\MIRACLE1\obj\Debug\net6.0\ref\MIRACLE1.dll
+C:\Users\Student\source\repos\MIRACLE1\MIRACLE1\obj\Debug\net6.0\MIRACLE1.pdb
+C:\Users\Student\source\repos\MIRACLE1\MIRACLE1\obj\Debug\net6.0\MIRACLE1.genruntimeconfig.cache

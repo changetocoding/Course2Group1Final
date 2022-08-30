@@ -1,0 +1,15 @@
+C:\Users\Student\source\repos\michaelproject\michaelproject\obj\Debug\net6.0\michaelproject.csproj.AssemblyReference.cache
+C:\Users\Student\source\repos\michaelproject\michaelproject\obj\Debug\net6.0\michaelproject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Student\source\repos\michaelproject\michaelproject\obj\Debug\net6.0\michaelproject.AssemblyInfoInputs.cache
+C:\Users\Student\source\repos\michaelproject\michaelproject\obj\Debug\net6.0\michaelproject.AssemblyInfo.cs
+C:\Users\Student\source\repos\michaelproject\michaelproject\obj\Debug\net6.0\michaelproject.csproj.CoreCompileInputs.cache
+C:\Users\Student\source\repos\michaelproject\michaelproject\bin\Debug\net6.0\michaelproject.exe
+C:\Users\Student\source\repos\michaelproject\michaelproject\bin\Debug\net6.0\michaelproject.deps.json
+C:\Users\Student\source\repos\michaelproject\michaelproject\bin\Debug\net6.0\michaelproject.runtimeconfig.json
+C:\Users\Student\source\repos\michaelproject\michaelproject\bin\Debug\net6.0\michaelproject.dll
+C:\Users\Student\source\repos\michaelproject\michaelproject\bin\Debug\net6.0\michaelproject.pdb
+C:\Users\Student\source\repos\michaelproject\michaelproject\obj\Debug\net6.0\michaelproject.dll
+C:\Users\Student\source\repos\michaelproject\michaelproject\obj\Debug\net6.0\refint\michaelproject.dll
+C:\Users\Student\source\repos\michaelproject\michaelproject\obj\Debug\net6.0\michaelproject.pdb
+C:\Users\Student\source\repos\michaelproject\michaelproject\obj\Debug\net6.0\michaelproject.genruntimeconfig.cache
+C:\Users\Student\source\repos\michaelproject\michaelproject\obj\Debug\net6.0\ref\michaelproject.dll

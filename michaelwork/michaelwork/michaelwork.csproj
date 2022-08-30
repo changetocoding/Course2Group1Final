@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Car.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="NewFolder\TextFile1.txt" />
+    <None Remove="NewFolder\TextTemplate1.tt" />
+  </ItemGroup>
+
+</Project>

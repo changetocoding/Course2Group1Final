@@ -1,0 +1,8 @@
+C:\Users\Student\source\repos\Bank2\Bank2\bin\Debug\Bank2.exe.config
+C:\Users\Student\source\repos\Bank2\Bank2\bin\Debug\Bank2.exe
+C:\Users\Student\source\repos\Bank2\Bank2\bin\Debug\Bank2.pdb
+C:\Users\Student\source\repos\Bank2\Bank2\obj\Debug\Bank2.csproj.AssemblyReference.cache
+C:\Users\Student\source\repos\Bank2\Bank2\obj\Debug\Bank2.csproj.SuggestedBindingRedirects.cache
+C:\Users\Student\source\repos\Bank2\Bank2\obj\Debug\Bank2.csproj.CoreCompileInputs.cache
+C:\Users\Student\source\repos\Bank2\Bank2\obj\Debug\Bank2.exe
+C:\Users\Student\source\repos\Bank2\Bank2\obj\Debug\Bank2.pdb

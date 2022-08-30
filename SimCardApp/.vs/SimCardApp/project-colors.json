@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "29fe2156-cb3e-405a-8ceb-921521493739": {
+      "ProjectGuid": "29fe2156-cb3e-405a-8ceb-921521493739",
+      "DisplayName": "SimCardApp",
+      "ColorIndex": 0
+    },
+    "8c564777-63ab-417c-a7f5-a38445d6fc46": {
+      "ProjectGuid": "8c564777-63ab-417c-a7f5-a38445d6fc46",
+      "DisplayName": "SimCardTest",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

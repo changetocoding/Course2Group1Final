@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "8d6c7f23-2aae-42cf-b720-513cd7325645": {
+      "ProjectGuid": "8d6c7f23-2aae-42cf-b720-513cd7325645",
+      "DisplayName": "Scholarship",
+      "ColorIndex": 0
+    },
+    "ed37f221-b7e1-4da0-a711-7e33f225aa0e": {
+      "ProjectGuid": "ed37f221-b7e1-4da0-a711-7e33f225aa0e",
+      "DisplayName": "ScholarshipTest",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
