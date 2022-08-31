@@ -23,12 +23,12 @@ namespace BankApp.Test.Features
             var account2 = new Account { Id = toAccountId, Balance = 200 };
 
             mockAccountRepo.Setup(x => x.GetAccountById(fromAccountId)).Returns(account1);
-            mockAccountRepo.Setup(x => x.GetAccountById(fromAccountId)).Returns(account2);
+            mockAccountRepo.Setup(x => x.GetAccountById(toAccountId)).Returns(account2);
 
             var transfer = new TransferMoney(mockAccountRepo.Object, mockNotificationService.Object);
 
             // Act
-            Assert.Throws<InvalidOperationException>(() => transfer.Execute(fromAccountId, toAccountId, 300));
+            transfer.Execute(fromAccountId, toAccountId, 300);
 
             //Assert
             Assert.That(account1.Balance, Is.EqualTo(700));
