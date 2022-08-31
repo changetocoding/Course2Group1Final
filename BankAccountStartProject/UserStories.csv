@@ -1,0 +1,67 @@
+﻿User Stories,,,
+,,,
+Id,Name,User story,Details
+Phase 1: Bank Functionality,,,
+1.1,Add an account,I as a customer of XYZ Bank want to be able to open a bank account,"The customer will provide:
+- Their Email.
+They will receive their Account Number (or Id) which is an int. A new account will be created with balance 0 for the user"
+1.2,Pay in,I as a customer of XYZ Bank want to be able to pay money into a bank account,"The customer will provide the Account Number (or Id) of the account to be paid into and an amount to increase their balance by. 
+- The Account Number (or Id) is an int
+- A pay in must result in the balance being increased: Their balance should not reduce (a withdrawal should be done instead) and a pay-in of 0 is not allowed
+- Users are not allowed to pay in more than 10,000 in a single transaction/go
+
+Most of the functionality for this is done. But a test is failing. Fix the failing test and add any other tests you feel necessary"
+1.3,Withdraw money,I as a customer of XYZ Bank want to be able to withdraw money from my account,"The customer will provide the Account Number (or Id) of the account to be withdrawn from and an amount to reduce their balance by. 
+- The Account Number (or Id) is an int
+- A withdrawal must result in the balance being decreased: Their balance should not increase (a pay-in should be done instead) and a withdrawal of 0 is not allowed
+- Users are not allowed to withdraw more money than they have in their account
+- Users should be notified if their balance falls below 500
+
+Add any unit tests you feel necessary"
+1.4,Transfer money between 2 accounts,I as a customer of XYZ Bank want to be able to transfer money from a account into any other account at the bank,"The customer will provide: the Account Number (or Id), and an amount to reduce their balance by. 
+- The Account Number (or Id) of the account to be withdrawn from. This is an int
+- The Account Number (or Id) of the account to paid into. This is an int
+- The amount to be transfered.
+
+The rules for pay-in and withdrawal must be followed
+
+Add any unit tests you feel necessary"
+1.5,Fraudulent Accounts Tracking,"For audit purposes we keep track of the total amount withdrawn and the total amount paid-in. If the total amount paid-in is 100,000,000 or more, we suspect fraud and you should prevent any more pay-ins or withdrawals happening on that account","-If the total paid in is more than or equal to 100,000,000 prevent any more pay-ins, withdrawals or transfers happening on that account.
+- You must allow the transaction that will take them over the limit. For example if the account balance is 99,999,999 and they pay in 101. Allow the transaction so their new balance is now 100,000,100. From now on prevent any withdrawals, transfers or pay-ins from happening 
+- Notify that fraudulent activity has been detected when a Transfer or pay-in happens that takes the account over the limit
+
+Add any unit tests you feel necessary"
+,,,
+Phase 2: Data storage,,,
+2.1,Limits increase,The bank has decided to increase the pay in limit and the low balance notification limit after complaints by the users,"- Users are not allowed to pay in more than 40,000 in a single transaction/go
+- Users are not allowed to transfer more than 40,000 in a single transaction
+- Users should be notified if their balance falls below 500 on a withdrawal or transfer"
+2.2,Persistent Storage of the accounts data,"The bank staff have complained that they need to always keep the app open otherwise they will lose all the data. And there has been cases of power failure/computer crashes and all the account data has been lost which is not acceptable. 
+You must now store the bank accounts in a database so when the application starts up the old data is still present","- Setup a database locally. You should store the accounts information in the database
+- Create a C# database project
+- Import database as C# classes into a db csproj
+- Create a new class that implements the IAccountRepository interface using entity framework
+- Remove InMemoryAccountRepository class and its tests (InMemoryAccountRepositoryTests)
+- When implementing the Updating Account - Ensure only the Balance, Withdrawn and PaidIn fields value change. Any other changes should be ingored"
+,,,
+Phase 3: Web Api,,,
+3.1,Account Service API,In this phase the users have requested a nicer online user interface. A separate team will be building the online user interface. Your task is to build a webservice with the endpoints for the operations they want to perform on the bank app.,"Create a webservice that has endpoints to perform the following functionality:
+
+Accounts Controller:
+- Get a list of all the accounts registered (already done)
+- Create an Account
+
+Features Controller:
+- Pay-in Money
+- Withdraw Money
+- Transfer Money between 2 accounts"
+,,,
+Phase 4: Additional tasks,,,
+4.1,(Extra) Email addresses,We've received reports that users are entering values that are not vaild email addresses when creating an account. Enforce a check to make sure the email addresses are valid when creating an account,"Ensure:
+- Email addresses must contain '@' and '.'
+- Reject email address that fail this validation (throw exception) and don't create an account"
+4.2,(Extra) Data Encapsulation,"You manager has done a code review of what the previous person did noticed that fields on the Account class that should be encapsulated are not properly encapsulated.
+This means they can be accidentally set to incorrect values by a developer writing code. We should fix this to make our application more secure","Encapsulate Fields: Account.Withdrawn, Account.Balance, and Account.PaidIn so they can be publicly accessed for reading, but only privately set"
+4.3,(Extra) Store notifications,The bank staff have requested that notifications be stored,"You manager has given you free rein on this. You may store the notifications on a file or in the database you created. You should refactor your code appropriately to make sure that the single responsibility principle is followed, and the storage is decoupled from the notification functionality"
+,,,
+,,,
