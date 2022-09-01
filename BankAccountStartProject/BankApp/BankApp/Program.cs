@@ -2,7 +2,7 @@
 using BankApp.Core.DataAccess;
 using BankApp.Core.Features;
 using BankApp.Core.Services;
-
+using BankApp.Data.Scaffolded;
 
 namespace MoneyBox.ConsoleApp
 {
@@ -10,16 +10,20 @@ namespace MoneyBox.ConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine(" WELCOME TO XYZ BANK");
 
-            var repoService = new InMemoryAccountRepository();
+
+           
+
+            var repoService = new DbAccountRepository();
             var notificationService = new NotificationService();
-
+            
 
             var withdrawService = new WithdrawMoney(repoService, notificationService);
             var transferService = new TransferMoney(repoService, notificationService);
             var payInService = new PayInMoney(repoService, notificationService);
 
+           
 
             while (true)
             {
@@ -29,6 +33,7 @@ namespace MoneyBox.ConsoleApp
                 {
                     break;
                 }
+                
                 else if ("create".Equals(instruction, StringComparison.CurrentCultureIgnoreCase))
                 {
                     CreateAccount(repoService);
@@ -57,7 +62,7 @@ namespace MoneyBox.ConsoleApp
             }
         }
 
-
+       
 
         static void CreateAccount(IAccountRepository repo)
         {

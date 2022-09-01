@@ -15,7 +15,7 @@ namespace BankApp.Core.Features
             _notificationService = notificationService;
         }
 
-        
+
         //public void Execute(int fromAccountId, decimal amount)
         //{
         //    var from = accountRepository.GetAccountById(fromAccountId);
@@ -47,14 +47,16 @@ namespace BankApp.Core.Features
                 to.PayIn(amount);
             }
 
-            else if(amount < 0)
+            else if (amount < 0)
             {
-                throw new InvalidOperationException();
+                throw new InvalidOperationException("You cannot transfer negative amounts");
             }
-            else if(amount > from.Balance)
+            else if(amount == 0)
             {
-                throw new InvalidOperationException();
+                throw new InvalidOperationException("You cannot transfer an amount with a value of 0");
             }
+            
+            
             _accountRepository.Update(from);
             _accountRepository.Update(to);
             _notificationService.NotifyFundsLow(from);

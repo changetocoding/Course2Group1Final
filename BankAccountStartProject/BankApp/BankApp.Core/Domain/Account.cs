@@ -5,7 +5,7 @@ namespace BankApp.Core.Domain
     public class Account
     {
         public const decimal FraudulentActivityLimit = 100_000_000m;
-        public const decimal PayInLimit = 4000m;
+        public const decimal PayInLimit = 40000m;
         public const decimal LowBalanceThreshold = 500m;
         public const decimal BalanceLimitForWithdraw = 0m;
 
@@ -33,8 +33,13 @@ namespace BankApp.Core.Domain
                 throw new InvalidOperationException("Insufficient funds to withdraw");
             if (FraudulentActivityDectected())
                 throw new Exception("Fraudlent activities have been detected in your account");
-            if (amount < 0)
+            if (amount < BalanceLimitForWithdraw)
                 throw new InvalidOperationException("The amount entered is negative");
+            if (amount == BalanceLimitForWithdraw)
+                throw new InvalidOperationException("You cannot withdraw an amount with the value of zero");
+            
+            if (amount == BalanceLimitForWithdraw)
+                throw new InvalidOperationException();
             Balance = Balance - amount;
                 Withdrawn = Withdrawn + amount;
             
@@ -48,6 +53,9 @@ namespace BankApp.Core.Domain
 
             if(FraudulentActivityDectected())
                 throw new InvalidOperationException("Fraudlent activities have been detected in your account");
+            if (amount == 0)
+                throw new InvalidOperationException("You cannot pay amount of 0 to your account");
+            
 
             if (amount < 0)
                 throw new InvalidOperationException("The amount entered is negative");
