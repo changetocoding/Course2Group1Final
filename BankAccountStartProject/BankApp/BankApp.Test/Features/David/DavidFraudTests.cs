@@ -85,5 +85,18 @@ namespace BankApp.Test.Features.David
             Assert.That(_accountCloseToLimit.Balance, Is.EqualTo(153_000));
             _mockNotificationService.Verify(x => x.NotifyFraudlentActivity(_accountCloseToLimit));
         }
+
+        [Test]
+        public void GoOverLimitThenTryToPayMore()
+        {
+            // Act
+            _deposit.Execute(_accountCloseToLimit.Id, 1_001);
+            Assert.Throws<Exception>(() => _transfer.Execute(_accountOverLimit.Id, _accountCloseToLimit.Id, 2));
+
+            //Assert
+            Assert.That(_accountCloseToLimit.Balance, Is.EqualTo(151_001));
+            Assert.That(_accountCloseToLimit.PaidIn, Is.EqualTo(100_000_001));
+            _mockNotificationService.Verify(x => x.NotifyFraudlentActivity(_accountCloseToLimit));
+        }
     }
 }

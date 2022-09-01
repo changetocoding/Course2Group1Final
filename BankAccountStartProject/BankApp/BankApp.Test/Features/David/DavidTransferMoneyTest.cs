@@ -182,7 +182,7 @@ namespace BankApp.Test.Features.David
             var transfer = new TransferMoney(myMock.Object, mockNotificationService.Object);
 
             // act 
-            Assert.That(() => transfer.Execute(fromAccountId, toAccountId, 1100), Throws.Exception);
+            Assert.Throws<InvalidOperationException>(() => transfer.Execute(fromAccountId, toAccountId, 1100));
 
             // assert
             Assert.That(fromAccount.Balance, Is.EqualTo(1000));
