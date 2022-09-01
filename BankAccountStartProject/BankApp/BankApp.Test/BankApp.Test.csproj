@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BankApp.Core\BankApp.Core.csproj" />
+    <ProjectReference Include="..\BankApp.Web\BankApp.Web.csproj" />
   </ItemGroup>
 
 </Project>

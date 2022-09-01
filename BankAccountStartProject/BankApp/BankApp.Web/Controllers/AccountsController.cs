@@ -29,7 +29,13 @@ namespace BankApp.Web.Controllers
             });
         }
 
-      
+        [HttpPost]
+        [Route("CreateAccount")]
+        public async Task<IActionResult> CreateAccount(string accountEmail)
+        {
+            var accounts = _accountRepository.CreateAccount(accountEmail);
+            return null;
+        }
     }
 
 
