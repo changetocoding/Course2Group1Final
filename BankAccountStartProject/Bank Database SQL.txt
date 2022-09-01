@@ -1,0 +1,18 @@
+CREATE TABLE [dbo].[AccountDb](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Email] Nvarchar(200) NULL,
+	Balance Decimal(18, 2) Not NULL default(0),
+	Withdrawn Decimal(18, 2) Not NULL default(0),
+	PaidIn Decimal(18, 2) Not NULL default(0),
+	PRIMARY KEY  (Id)
+) 
+GO
+
+CREATE TABLE [dbo].Notification(
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Email] Nvarchar(200) NULL,
+	[Message]  Nvarchar(max) NULL,
+	PRIMARY KEY  (Id)
+) 
+
+Scaffold-DbContext "data source=(LocalDB)\MSSQLLocalDB;initial catalog=Bank;MultipleActiveResultSets=True;App=EntityFramework" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Scaffolded
