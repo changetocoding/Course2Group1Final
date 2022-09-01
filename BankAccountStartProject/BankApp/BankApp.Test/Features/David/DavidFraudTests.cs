@@ -26,7 +26,7 @@ namespace BankApp.Test.Features.David
             _accountOverLimit = new Account { Id = 1, Balance = 50_000, PaidIn = 100_000_000 };
             mockAccountRepo.Setup(x => x.GetAccountById(_accountOverLimit.Id)).Returns(_accountOverLimit);
 
-            _accountCloseToLimit = new Account { Id = 2, Balance = 100_000, PaidIn = 99_000_000 };
+            _accountCloseToLimit = new Account { Id = 2, Balance = 150_000, PaidIn = 99_999_000 };
             mockAccountRepo.Setup(x => x.GetAccountById(_accountCloseToLimit.Id)).Returns(_accountCloseToLimit);
 
             _withdraw = new WithdrawMoney(mockAccountRepo.Object, _mockNotificationService.Object);
@@ -71,7 +71,7 @@ namespace BankApp.Test.Features.David
             _deposit.Execute(_accountCloseToLimit.Id, 3_000);
 
             //Assert
-            Assert.That(_accountCloseToLimit.Balance, Is.EqualTo(102_000));
+            Assert.That(_accountCloseToLimit.Balance, Is.EqualTo(153_000));
         }
 
 
@@ -82,7 +82,7 @@ namespace BankApp.Test.Features.David
             _deposit.Execute(_accountCloseToLimit.Id, 3_000);
 
             //Assert
-            Assert.That(_accountCloseToLimit.Balance, Is.EqualTo(102_000));
+            Assert.That(_accountCloseToLimit.Balance, Is.EqualTo(153_000));
             _mockNotificationService.Verify(x => x.NotifyFraudlentActivity(_accountCloseToLimit));
         }
     }

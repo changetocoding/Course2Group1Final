@@ -108,13 +108,23 @@ namespace BankApp.Test.Features.David
         }
 
         [Test]
-        public void CannotPayInBelowLimit_40_000()
+        public void CanPayInBelowLimit_40_000()
         {
             // act 
             _deposit.Execute(_account.Id, 20_000);
 
             // assert
             Assert.That(_account.Balance, Is.EqualTo(21_000));
+        }
+
+        [Test]
+        public void CanPayInBelowLimit_10_000()
+        {
+            // act 
+            _deposit.Execute(_account.Id, 8_000);
+
+            // assert
+            Assert.That(_account.Balance, Is.EqualTo(9_000));
         }
     }
 }
