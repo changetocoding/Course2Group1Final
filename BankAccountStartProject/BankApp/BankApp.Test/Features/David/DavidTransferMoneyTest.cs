@@ -65,30 +65,6 @@ namespace BankApp.Test.Features.David
         }
 
         [Test]
-        public void CannotTransferAbovePayInLimit_10_000()
-        {
-            // setup
-            var mockNotificationService = new Mock<INotificationService>();
-
-            var myMock = new Mock<IAccountRepository>();
-            const int fromAccountId = 5;
-            const int toAccountId = 4;
-            var account1 = new Account { Id = fromAccountId, Balance = 50_000 };
-            var account2 = new Account { Id = toAccountId, Balance = 1_000 };
-            myMock.Setup(x => x.GetAccountById(fromAccountId)).Returns(account1);
-            myMock.Setup(x => x.GetAccountById(toAccountId)).Returns(account2);
-
-            var transfer = new TransferMoney(myMock.Object, mockNotificationService.Object);
-
-            // act 
-            Assert.Throws<InvalidOperationException>(() => transfer.Execute(fromAccountId, toAccountId, 11_000));
-
-            // assert
-            Assert.That(account1.Balance, Is.EqualTo(50_000));
-            Assert.That(account2.Balance, Is.EqualTo(1_000));
-        }
-
-        [Test]
         public void CannotTransferAbovePayInLimit_40_000()
         {
             // setup
@@ -108,8 +84,8 @@ namespace BankApp.Test.Features.David
             Assert.Throws<InvalidOperationException>(() => transfer.Execute(fromAccountId, toAccountId, 41_000));
 
             // assert
-            Assert.That(account1.Balance, Is.EqualTo(50_000));
             Assert.That(account2.Balance, Is.EqualTo(1_000));
+            Assert.That(account1.Balance, Is.EqualTo(50_000));
         }
 
         [Test]

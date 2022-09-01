@@ -66,27 +66,6 @@ namespace BankApp.Test.Features.David
         }
 
         [Test]
-        public void CannotPayInAbovePayInLimit_10_000()
-        {
-            // setup
-            var mockNotificationService = new Mock<INotificationService>();
-
-            var myMock = new Mock<IAccountRepository>();
-            const int intoAccountId = 5;
-            var account = new Account { Id = intoAccountId, Balance = 850 };
-
-            myMock.Setup(x => x.GetAccountById(intoAccountId)).Returns(account);
-
-            var deposite = new PayInMoney(myMock.Object, mockNotificationService.Object);
-
-            // act 
-            Assert.Throws<InvalidOperationException>(() => deposite.Execute(intoAccountId, 11_000));
-
-            // assert
-            Assert.That(account.Balance, Is.EqualTo(850));
-        }
-
-        [Test]
         public void CannotPayInAbovePayInLimit_40_000()
         {
             // setup
