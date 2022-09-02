@@ -26,10 +26,7 @@ namespace BankApp.Core.Features
             {
                 throw new InvalidOperationException();
             }
-            else if(amount > 100000000)
-            {
-                throw new InvalidOperationException();
-            }
+            
             else
             {
                 throw new Exception();

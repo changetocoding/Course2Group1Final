@@ -96,7 +96,7 @@ namespace MoneyBox.ConsoleApp
             }
         }
 
-        private static void Withdraw(WithdrawMoney withdraw)
+        static void Withdraw(WithdrawMoney withdraw)
         {
             try
             {
@@ -117,7 +117,7 @@ namespace MoneyBox.ConsoleApp
                
             }
         }
-        private static void TransferMoney(TransferMoney transferMoney)
+        static void TransferMoney(TransferMoney transferMoney)
         {
             try
             {

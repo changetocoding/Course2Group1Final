@@ -33,15 +33,17 @@ namespace BankApp.Core.Domain
                 throw new InvalidOperationException("Insufficient funds to withdraw");
             if (FraudulentActivityDectected())
                 throw new Exception("Fraudlent activities have been detected in your account");
-            if (amount < BalanceLimitForWithdraw)
+            if (amount <= BalanceLimitForWithdraw)
                 throw new InvalidOperationException("The amount entered is negative");
+            if (Balance >= FraudulentActivityLimit)
+                throw new InvalidOperationException("You cannot withdraw any money from this account due to suspicious activities");
             if (amount == BalanceLimitForWithdraw)
                 throw new InvalidOperationException("You cannot withdraw an amount with the value of zero");
             
             if (amount == BalanceLimitForWithdraw)
                 throw new InvalidOperationException();
             Balance = Balance - amount;
-                Withdrawn = Withdrawn + amount;
+            Withdrawn = Withdrawn + amount;
             
 
         }
@@ -50,8 +52,9 @@ namespace BankApp.Core.Domain
         {
             if (amount > PayInLimit)
                 throw new InvalidOperationException($"You cannot pay in more than {PayInLimit} in a single transaction");
-
-            if(FraudulentActivityDectected())
+            if (Balance >= FraudulentActivityLimit)
+                throw new InvalidOperationException("You cannot withdraw any money from this account due to suspicious activities");
+            if (FraudulentActivityDectected())
                 throw new InvalidOperationException("Fraudlent activities have been detected in your account");
             if (amount == 0)
                 throw new InvalidOperationException("You cannot pay amount of 0 to your account");
