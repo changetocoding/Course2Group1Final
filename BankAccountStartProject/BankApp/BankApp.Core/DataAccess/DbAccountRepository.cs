@@ -32,9 +32,7 @@ namespace BankApp.Core.DataAccess
                 return (false);
         }
         public int CreateAccount(string emailAddress)
-        {
-           
-
+        {          
                 if (ValidatingEmailAddress(emailAddress) is true)
                 {
                     var check = dbcontext.AccountDbs.Where(x => x.Email == emailAddress).FirstOrDefault();
@@ -43,8 +41,7 @@ namespace BankApp.Core.DataAccess
                         var account = new AccountDb() { Email = emailAddress };
                         dbcontext.AccountDbs.Add(account);
                         dbcontext.SaveChanges();
-                        return account.Id;
-                    
+                        return account.Id;                   
                     }
                     else
                     {
@@ -54,19 +51,14 @@ namespace BankApp.Core.DataAccess
                 else
                 {
                     throw new Exception();
-                }      
-            
+                }                  
         }
 
         public Account GetAccountById(int accountId)
         {
-           
-            
-
             var check = dbcontext.AccountDbs.Where(x => x.Id == accountId).FirstOrDefault();
             var account = new Account() { Id = check.Id};
-            return account;    
-            
+            return account;               
         }
 
         public IEnumerable<Account> GetAll()
@@ -76,16 +68,20 @@ namespace BankApp.Core.DataAccess
         }
 
         public void Update(Account account)
-        {
-            
-
-            var option = Console.ReadLine();
-                var check = dbcontext.AccountDbs.Where(x => x.Id == account.Id).FirstOrDefault();
+        {             
+            var check = dbcontext.AccountDbs.Where(x => x.Id == account.Id).FirstOrDefault();
             
             if (check.Id == account.Id)
             {
-
                 check.Balance += account.Balance;
+                dbcontext.SaveChanges();
+
+                check.PaidIn += account.PaidIn;
+                dbcontext.SaveChanges();
+
+
+                account.Balance -= check.Balance;
+                check.Withdrawn = account.Withdrawn;
                 dbcontext.SaveChanges();
             }
             

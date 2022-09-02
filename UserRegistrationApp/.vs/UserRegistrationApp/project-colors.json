@@ -10,7 +10,12 @@
       "ProjectGuid": "c38b513a-9a53-4658-a97b-8c8615cc9364",
       "DisplayName": "UserRegistrationTest3",
       "ColorIndex": 1
+    },
+    "f041ee9e-c481-4fd0-a9c1-2de9ee324d39": {
+      "ProjectGuid": "f041ee9e-c481-4fd0-a9c1-2de9ee324d39",
+      "DisplayName": "UserRegistration.Data",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 3
 }
