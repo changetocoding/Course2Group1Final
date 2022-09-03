@@ -67,7 +67,7 @@ namespace BankApp.Core.DataAccess
         {
             using (var dbcontext = new BankContext())
             {
-                return (IEnumerable<Account>) dbcontext.AccountDbs.ToList();
+                return  dbcontext.AccountDbs.Select(x => new Account() { Id = x.Id}).ToList();
             }
         }
 
