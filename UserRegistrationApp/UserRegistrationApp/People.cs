@@ -7,9 +7,6 @@ using UserRegistration.Data.Scaffolded;
 using UserRegistrationApp;
 using System.Text.RegularExpressions;
 
-
-
-
 namespace UserRegistrationApp
 {
     public class People
