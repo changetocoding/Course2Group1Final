@@ -44,6 +44,7 @@ namespace UserRegistionApp.Web.Controllers
         public bool Delete(string email)
         {
             var users = _people.DeleteUserDetails(email);
+
             return true;
         }
     }
