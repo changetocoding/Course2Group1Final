@@ -39,6 +39,10 @@ namespace BankApp.Core.Features
             {
                 throw new InvalidOperationException("You cannot withdraw an amount with value of 0");
             }
+            else if(amount > from.Balance)
+            {
+                throw new InvalidOperationException("You cannot withdraw more money than your balance");
+            }
 
             if (from.FraudulentActivityDectected())
             {

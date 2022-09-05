@@ -90,8 +90,28 @@ namespace BankApp.Test.Features
             // assert
             Assert.That(account.Balance, Is.EqualTo(0));
         }
+        [Test]
+        public void CannotWithdrawMoney_IfFraudlentActivityIsDetected()
+        {
+            // setup
+            var mockNotificationService = new Mock<INotificationService>();
 
-        
-        
+            var myMock = new Mock<IAccountRepository>();
+            const int intoAccountId = 5;
+            var account = new Account { Id = intoAccountId, Balance = 100_000_000m };
+
+            myMock.Setup(x => x.GetAccountById(intoAccountId)).Returns(account);
+
+            var deposite = new WithdrawMoney(myMock.Object, mockNotificationService.Object);
+
+            // act 
+            Assert.Throws<InvalidOperationException>(() => deposite.Execute(intoAccountId, 6000));
+
+            // assert
+            Assert.That(account.Balance, Is.EqualTo(100000000));
+        }
+
+
+
     }
 }
