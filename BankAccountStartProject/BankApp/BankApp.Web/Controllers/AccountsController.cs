@@ -40,13 +40,15 @@ namespace BankApp.Web.Controllers
 
         [HttpPut]
         [Route("UpdateAccount")]
-        public void Update(Account accountDetails)
+        public void PayInMoney(Account accountDetails, int Id)
         {
-           
+            var accountId = Id;
             var account = new Account() { Balance = accountDetails.Balance, Email = accountDetails.Email, 
                                           Id = accountDetails.Id, PaidIn = accountDetails.PaidIn, 
                                           Withdrawn = accountDetails.Withdrawn };
             _accountRepository.Update(account);
+            
+
         }
     }
 
