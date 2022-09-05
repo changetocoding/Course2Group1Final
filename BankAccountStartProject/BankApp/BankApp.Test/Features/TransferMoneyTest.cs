@@ -34,7 +34,7 @@ namespace BankApp.Test.Features
             Assert.That(account1.Balance, Is.EqualTo(700));
         }
         [Test]
-        public void IfWithdrawMoneyIsNegative_ThenThrowsException()
+        public void IfTransferMoneyIsNegative_ThenThrowsException()
         {
             // setup
             var mockNotificationService = new Mock<INotificationService>();
@@ -58,7 +58,7 @@ namespace BankApp.Test.Features
         }
 
         [Test]
-        public void CannotPayInAbovePayInLimit()
+        public void CannotTransferAboveBalanceInAccount()
         {
             // setup
             var mockNotificationService = new Mock<INotificationService>();
@@ -78,6 +78,51 @@ namespace BankApp.Test.Features
 
             // assert
             Assert.That(account1.Balance, Is.EqualTo(640));
+        }
+        [Test]
+        public void IfAmountTransferredIsZero_ThrowAnException()
+        {
+            // setup
+            var mockNotificationService = new Mock<INotificationService>();
+
+            var myMock = new Mock<IAccountRepository>();
+            const int fromAccountId = 5;
+            const int toAccountId = 4;
+            var account1 = new Account { Id = fromAccountId, Balance = 640 };
+            var account2 = new Account { Id = toAccountId, Balance = 700 };
+            myMock.Setup(x => x.GetAccountById(fromAccountId)).Returns(account1);
+            myMock.Setup(x => x.GetAccountById(toAccountId)).Returns(account2);
+
+            var transfer = new TransferMoney(myMock.Object, mockNotificationService.Object);
+
+            // act 
+            Assert.Throws<InvalidOperationException>(() => transfer.Execute(fromAccountId, toAccountId, 0));
+
+            // assert
+            Assert.That(account1.Balance, Is.EqualTo(640));
+        }
+
+        [Test]
+        public void CannotTransferMoney_IFFraudlentActivityDetected()
+        {
+            // setup
+            var mockNotificationService = new Mock<INotificationService>();
+
+            var myMock = new Mock<IAccountRepository>();
+            const int fromAccountId = 5;
+            const int toAccountId = 4;
+            var account1 = new Account { Id = fromAccountId, Balance = 100_000_000 };
+            var account2 = new Account { Id = toAccountId, Balance = 700 };
+            myMock.Setup(x => x.GetAccountById(fromAccountId)).Returns(account1);
+            myMock.Setup(x => x.GetAccountById(toAccountId)).Returns(account2);
+
+            var transfer = new TransferMoney(myMock.Object, mockNotificationService.Object);
+
+            // act 
+            Assert.Throws<InvalidOperationException>(() => transfer.Execute(fromAccountId, toAccountId, 1000));
+
+            // assert
+            Assert.That(account1.Balance, Is.EqualTo(100_000_000));
         }
     }
 } 

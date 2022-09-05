@@ -66,10 +66,31 @@ namespace BankApp.Test.Features
             var deposite = new PayInMoney(myMock.Object, mockNotificationService.Object);
 
             // act 
-            Assert.Throws<InvalidOperationException>(() => deposite.Execute(intoAccountId, 6000));
+            Assert.Throws<InvalidOperationException>(() => deposite.Execute(intoAccountId, 60000));
 
             // assert
             Assert.That(account.Balance, Is.EqualTo(850));
+        }
+
+        [Test]
+        public void CannotPayIn_IfFraudlentActivityIsDetected()
+        {
+            // setup
+            var mockNotificationService = new Mock<INotificationService>();
+
+            var myMock = new Mock<IAccountRepository>();
+            const int intoAccountId = 5;
+            var account = new Account { Id = intoAccountId, Balance = 100_000_000m };
+
+            myMock.Setup(x => x.GetAccountById(intoAccountId)).Returns(account);
+
+            var deposite = new PayInMoney(myMock.Object, mockNotificationService.Object);
+
+            // act 
+            Assert.Throws<InvalidOperationException>(() => deposite.Execute(intoAccountId, 6000));
+
+            // assert
+            Assert.That(account.Balance, Is.EqualTo(100000000));
         }
     }
 

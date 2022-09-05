@@ -15,25 +15,6 @@ namespace BankApp.Core.Features
             _notificationService = notificationService;
         }
 
-        
-        //public void Execute(int fromAccountId, decimal amount)
-        //{
-        //    var from = accountRepository.GetAccountById(fromAccountId);
-
-        //    if (from.CanWithdraw(amount))
-        //    {
-        //        from.Withdraw(amount);
-        //    }
-        //    else
-        //    {
-        //        throw new Exception();
-        //    }
-
-        //    accountRepository.Update(from);
-
-        //    // ToDo
-        //}
-
         public void Execute(int fromAccountId, int toAccountId, decimal amount)
         {
             var from = _accountRepository.GetAccountById(fromAccountId);
@@ -47,21 +28,24 @@ namespace BankApp.Core.Features
                 to.PayIn(amount);
             }
 
-            else if(amount < 0)
+            else if (amount < 0)
             {
-                throw new InvalidOperationException();
+                throw new InvalidOperationException("You cannot transfer negative amounts");
+            }
+            else if(amount == 0)
+            {
+                throw new InvalidOperationException("You cannot transfer an amount with a value of 0");
             }
             else if(amount > from.Balance)
             {
-                throw new InvalidOperationException();
+                throw new InvalidOperationException("You cannot transfer amounts greater than your balance");
             }
+
             _accountRepository.Update(from);
             _accountRepository.Update(to);
             _notificationService.NotifyFundsLow(from);
             _notificationService.NotifyFundsLow(to);
-            
 
-            // ToDo
         }
     }
 }

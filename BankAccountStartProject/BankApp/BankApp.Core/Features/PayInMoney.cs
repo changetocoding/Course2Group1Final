@@ -26,6 +26,7 @@ namespace BankApp.Core.Features
             {
                 throw new InvalidOperationException();
             }
+            
             else
             {
                 throw new Exception();
@@ -37,6 +38,7 @@ namespace BankApp.Core.Features
                 _notificationService.NotifyFraudlentActivity(into);
             }
             _accountRepository.Update(into);
+           
         }
     }
 }

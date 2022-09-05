@@ -1,0 +1,21 @@
+1.  Create a new project of type ASP.Net Core Web Api.
+2. Add reference to the main project and the database through the dependecies of the Web Api project.
+3.  Create a new controller in the folder of Controllers under the ASP.Net Core Web Api project.
+4.  Create a new folder called View Models and create a new class under it (TableName.Details)
+5.  Enter the program class of your Web Api Project and configure the swagger if it is not configured by defauls (https://aka.ms/aspnetcore/swashbuckle)
+6.  Add instances of the class containing your methods and the DatabasaeContext class.
+7.  Set up the Web Api project as start up project.
+8. Insert the Route and Api controllers in your controller class under your controllers folder
+          
+              [Route("api/[controller]")]
+              [ApiController]
+          
+9.  Create a private readonly field and a constructor of the controller class instantiating the field to a parameter in the constructor.
+
+	private readonly People _people;
+        public UsersController(People people)
+        {
+            _people = people;
+        }
+    
+10.  Configure your Route to [ GET, POST, PUT, DELETE ] and implement the necessary methods.
