@@ -13,12 +13,7 @@ namespace BankApp.Core.DataAccess
 {
     public class DbAccountRepository : IAccountRepository
     {
-        private readonly BankContext dbcontext;
-
-        public DbAccountRepository()
-        {
-            dbcontext = new BankContext();
-        }
+        
         
         public bool ValidatingEmailAddress(string email)
         {
@@ -32,64 +27,67 @@ namespace BankApp.Core.DataAccess
                 return (false);
         }
         public int CreateAccount(string emailAddress)
-        {
-           
-
+        {   
+            using (var dbcontext = new BankContext())
+            {
                 if (ValidatingEmailAddress(emailAddress) is true)
                 {
                     var check = dbcontext.AccountDbs.Where(x => x.Email == emailAddress).FirstOrDefault();
-                    if (dbcontext.AccountDbs.Contains(check))
+                    if (!dbcontext.AccountDbs.Contains(check))
                     {
                         var account = new AccountDb() { Email = emailAddress };
                         dbcontext.AccountDbs.Add(account);
                         dbcontext.SaveChanges();
                         return account.Id;
-                    
                     }
                     else
                     {
-                       throw new Exception();
+                        throw new Exception();
                     }
                 }
                 else
                 {
                     throw new Exception();
-                }      
-            
+                }
+            }
+               
         }
 
         public Account GetAccountById(int accountId)
         {
-           
-            
-
-            var check = dbcontext.AccountDbs.Where(x => x.Id == accountId).FirstOrDefault();
-            var account = new Account() { Id = check.Id};
-            return account;    
-            
+            using (var dbcontext = new BankContext())
+            {
+                var check = dbcontext.AccountDbs.Where(x => x.Id == accountId).SingleOrDefault();
+                var account = new Account() { Id = check.Id };
+                return account;   
+            }
         }
 
         public IEnumerable<Account> GetAll()
         {
-            return (IEnumerable<Account>)dbcontext.AccountDbs.ToList();
-            
+            using (var dbcontext = new BankContext())
+            {
+                return  dbcontext.AccountDbs.Select(x => new Account() { Id = x.Id}).ToList();
+            }
         }
 
         public void Update(Account account)
         {
-            
-
-            var option = Console.ReadLine();
-                var check = dbcontext.AccountDbs.Where(x => x.Id == account.Id).FirstOrDefault();
-            
-            if (check.Id == account.Id)
+            using (var dbcontext = new BankContext())
             {
+                var dbObject = dbcontext.AccountDbs.SingleOrDefault(x => x.Id == account.Id);
+                if(dbObject is null)
+                {
+                    throw new Exception("Id not found");
+                }
 
-                check.Balance += account.Balance;
+                dbObject.Balance = account.Balance;
+                dbObject.PaidIn = account.PaidIn;
+                dbObject.Withdrawn = account.Withdrawn;
+
                 dbcontext.SaveChanges();
+
             }
-            
-            
         }
     }
 }

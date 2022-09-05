@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserRegistrationApp", "User
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserRegistration.Data", "UserRegistration.Data\UserRegistration.Data.csproj", "{F041EE9E-C481-4FD0-A9C1-2DE9EE324D39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserRegistrationTest3", "UserRegistrationTest3\UserRegistrationTest3.csproj", "{C38B513A-9A53-4658-A97B-8C8615CC9364}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserRegistrationTest3", "UserRegistrationTest3\UserRegistrationTest3.csproj", "{C38B513A-9A53-4658-A97B-8C8615CC9364}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserRegistionApp.Web", "UserRegistionApp.Web\UserRegistionApp.Web.csproj", "{A02CAED8-AD18-43E7-A7B0-F5F5B8374D0A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{C38B513A-9A53-4658-A97B-8C8615CC9364}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C38B513A-9A53-4658-A97B-8C8615CC9364}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C38B513A-9A53-4658-A97B-8C8615CC9364}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A02CAED8-AD18-43E7-A7B0-F5F5B8374D0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A02CAED8-AD18-43E7-A7B0-F5F5B8374D0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A02CAED8-AD18-43E7-A7B0-F5F5B8374D0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A02CAED8-AD18-43E7-A7B0-F5F5B8374D0A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,5 @@
 using BankApp.Core.DataAccess;
+using BankApp.Core.Domain;
 using BankApp.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -31,10 +32,21 @@ namespace BankApp.Web.Controllers
 
         [HttpPost]
         [Route("CreateAccount")]
-        public async Task<IActionResult> CreateAccount(string accountEmail)
+        public int Create(string emailAddress)
         {
-            var accounts = _accountRepository.CreateAccount(accountEmail);
-            return null;
+            var account = _accountRepository.CreateAccount(emailAddress);
+            return account;
+        }
+
+        [HttpPut]
+        [Route("UpdateAccount")]
+        public void Update(Account accountDetails)
+        {
+           
+            var account = new Account() { Balance = accountDetails.Balance, Email = accountDetails.Email, 
+                                          Id = accountDetails.Id, PaidIn = accountDetails.PaidIn, 
+                                          Withdrawn = accountDetails.Withdrawn };
+            _accountRepository.Update(account);
         }
     }
 

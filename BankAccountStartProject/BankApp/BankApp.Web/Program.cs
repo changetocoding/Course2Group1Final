@@ -17,7 +17,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<INotificationService, NotificationService>();
 
 // TODO: In phase 2 you ill need to change this to your new IAccountRepository implementation
-builder.Services.AddScoped<IAccountRepository, InMemoryAccountRepository>();
+builder.Services.AddScoped<IAccountRepository, DbAccountRepository>();
 
 
 

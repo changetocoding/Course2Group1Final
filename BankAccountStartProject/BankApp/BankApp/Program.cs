@@ -12,9 +12,6 @@ namespace MoneyBox.ConsoleApp
         {
             Console.WriteLine(" WELCOME TO XYZ BANK");
 
-
-           
-
             var repoService = new DbAccountRepository();
             var notificationService = new NotificationService();
             
@@ -22,8 +19,6 @@ namespace MoneyBox.ConsoleApp
             var withdrawService = new WithdrawMoney(repoService, notificationService);
             var transferService = new TransferMoney(repoService, notificationService);
             var payInService = new PayInMoney(repoService, notificationService);
-
-           
 
             while (true)
             {
@@ -57,8 +52,7 @@ namespace MoneyBox.ConsoleApp
                 else if ("notifications".Equals(instruction, StringComparison.CurrentCultureIgnoreCase))
                 {
                     Notifications(notificationService);
-                }
-                
+                }               
             }
         }
 
@@ -102,7 +96,7 @@ namespace MoneyBox.ConsoleApp
             }
         }
 
-        private static void Withdraw(WithdrawMoney withdraw)
+        static void Withdraw(WithdrawMoney withdraw)
         {
             try
             {
@@ -123,7 +117,7 @@ namespace MoneyBox.ConsoleApp
                
             }
         }
-        private static void TransferMoney(TransferMoney transferMoney)
+        static void TransferMoney(TransferMoney transferMoney)
         {
             try
             {
@@ -188,8 +182,6 @@ namespace MoneyBox.ConsoleApp
             {
                 Console.WriteLine("Exception: " + ex);
             }
-        }
-
-        
+        }       
     }
 }

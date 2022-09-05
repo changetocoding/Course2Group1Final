@@ -9,7 +9,6 @@ C:\Users\Student\source\repos\UserRegistrationApp\UserRegistrationApp\obj\Debug\
 C:\Users\Student\source\repos\UserRegistrationApp\UserRegistrationApp\obj\Debug\net6.0\UserRegistrationApp.AssemblyInfo.cs
 C:\Users\Student\source\repos\UserRegistrationApp\UserRegistrationApp\obj\Debug\net6.0\UserRegistrationApp.csproj.CoreCompileInputs.cache
 C:\Users\Student\source\repos\UserRegistrationApp\UserRegistrationApp\obj\Debug\net6.0\UserRegistrationApp.dll
-C:\Users\Student\source\repos\UserRegistrationApp\UserRegistrationApp\obj\Debug\net6.0\refint\UserRegistrationApp.dll
 C:\Users\Student\source\repos\UserRegistrationApp\UserRegistrationApp\obj\Debug\net6.0\UserRegistrationApp.pdb
 C:\Users\Student\source\repos\UserRegistrationApp\UserRegistrationApp\obj\Debug\net6.0\UserRegistrationApp.genruntimeconfig.cache
 C:\Users\Student\source\repos\UserRegistrationApp\UserRegistrationApp\obj\Debug\net6.0\ref\UserRegistrationApp.dll
@@ -56,3 +55,4 @@ C:\Users\Student\source\repos\UserRegistrationApp\UserRegistrationApp\bin\Debug\
 C:\Users\Student\source\repos\UserRegistrationApp\UserRegistrationApp\bin\Debug\net6.0\UserRegistration.Data.dll
 C:\Users\Student\source\repos\UserRegistrationApp\UserRegistrationApp\bin\Debug\net6.0\UserRegistration.Data.pdb
 C:\Users\Student\source\repos\UserRegistrationApp\UserRegistrationApp\obj\Debug\net6.0\UserRegistrationApp.csproj.CopyComplete
+C:\Users\Student\source\repos\UserRegistrationApp\UserRegistrationApp\bin\Debug\net6.0\ref\UserRegistrationApp.dll
