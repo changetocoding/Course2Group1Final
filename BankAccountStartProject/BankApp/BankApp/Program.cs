@@ -162,7 +162,6 @@ namespace MoneyBox.ConsoleApp
                 Console.WriteLine("Exception: " + ex);
             }
         }
-
         private static void Notifications(INotificationService notify)
         {
             try
