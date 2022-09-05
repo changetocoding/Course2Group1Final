@@ -24,7 +24,7 @@ namespace BankApp.Web.Controllers
             var accounts = _accountRepository.GetAll();
             return accounts.Select(x => new AccountDetails()
             {
-                Balance = x.Balance,
+                Balance = x.BalanceProperty,
                 Id = x.Id,
                 EmailAddress = x.Email
             });
@@ -38,18 +38,6 @@ namespace BankApp.Web.Controllers
             return account;
         }
 
-        [HttpPut]
-        [Route("UpdateAccount")]
-        public void PayInMoney(Account accountDetails, int Id)
-        {
-            var accountId = Id;
-            var account = new Account() { Balance = accountDetails.Balance, Email = accountDetails.Email, 
-                                          Id = accountDetails.Id, PaidIn = accountDetails.PaidIn, 
-                                          Withdrawn = accountDetails.Withdrawn };
-            _accountRepository.Update(account);
-            
-
-        }
     }
 
 

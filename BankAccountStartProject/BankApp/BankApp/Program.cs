@@ -3,17 +3,17 @@ using BankApp.Core.DataAccess;
 using BankApp.Core.Features;
 using BankApp.Core.Services;
 using BankApp.Data.Scaffolded;
-
+using System.IO;
 namespace MoneyBox.ConsoleApp
 {
     class Program
     {
         static void Main(string[] args)
-        {
+        {         
             Console.WriteLine(" WELCOME TO XYZ BANK");
 
             var repoService = new DbAccountRepository();
-            var notificationService = new NotificationService();
+            var notificationService = new TextNotificationService();
             
 
             var withdrawService = new WithdrawMoney(repoService, notificationService);
@@ -54,9 +54,7 @@ namespace MoneyBox.ConsoleApp
                     Notifications(notificationService);
                 }               
             }
-        }
-
-       
+        }  
 
         static void CreateAccount(IAccountRepository repo)
         {
@@ -74,7 +72,6 @@ namespace MoneyBox.ConsoleApp
                 Console.WriteLine("Exception: " + e);
             }
         }
-
         static void PayIn(PayInMoney payIn)
         {
             try
@@ -117,6 +114,7 @@ namespace MoneyBox.ConsoleApp
                
             }
         }
+
         static void TransferMoney(TransferMoney transferMoney)
         {
             try
@@ -162,6 +160,19 @@ namespace MoneyBox.ConsoleApp
                 Console.WriteLine("Exception: " + ex);
             }
         }
+
+
+        static void NewNotifications(string[] args)
+        {
+            var filePath = @"C:\Users\Student\source\repos\BankAccountStartProject\BankApp\BankNotifications.txt";
+            var lines = File.ReadAllLines(filePath);
+            foreach (var lin in lines)
+            {
+                Console.WriteLine(lin);
+            }
+        }
+
+
         private static void Notifications(INotificationService notify)
         {
             try
