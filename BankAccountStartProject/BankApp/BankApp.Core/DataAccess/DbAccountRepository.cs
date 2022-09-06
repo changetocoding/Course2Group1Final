@@ -64,9 +64,9 @@ namespace BankApp.Core.DataAccess
                 { 
                     Id = check.Id,
                     Email = check.Email,
-                    _balance = check.Balance,
-                    _withdrawn = check.Withdrawn,
-                    _paidIn = check.PaidIn
+                    Balance = check.Balance,
+                    Withdrawn = check.Withdrawn,
+                    PaidIn = check.PaidIn
                 };
                 if(check.Id == account.Id)
                 {
@@ -84,7 +84,7 @@ namespace BankApp.Core.DataAccess
         {
             using (var dbcontext = new BankContext())
             {
-                return  dbcontext.AccountDbs.Select(x => new Account() { Id = x.Id, Email = x.Email, _balance = x.Balance, _paidIn = x.PaidIn, _withdrawn = x.Withdrawn}).ToList();
+                return  dbcontext.AccountDbs.Select(x => new Account() { Id = x.Id, Email = x.Email, Balance = x.Balance, PaidIn = x.PaidIn, Withdrawn = x.Withdrawn}).ToList();
             }
         }
 
@@ -98,9 +98,9 @@ namespace BankApp.Core.DataAccess
                     throw new Exception("Id not found");
                 }
 
-                dbObject.Balance = account.BalanceProperty;
-                dbObject.PaidIn = account.PaidInProperty;
-                dbObject.Withdrawn = account.WithdrawnProperty;
+                dbObject.Balance = account.Balance;
+                dbObject.PaidIn = account.PaidIn;
+                dbObject.Withdrawn = account.Withdrawn;
 
                 dbcontext.SaveChanges();
             }

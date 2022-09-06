@@ -18,7 +18,7 @@ namespace BankApp.Test.Features
             var mockAccountRepo = new Mock<IAccountRepository>();
 
             const int fromAccountId = 1;
-            var account = new Account { Id = fromAccountId, BalanceProperty = 1000 };
+            var account = new Account { Id = fromAccountId, Balance = 1000 };
             mockAccountRepo.Setup(x => x.GetAccountById(fromAccountId)).Returns(account);
             var withdraw = new WithdrawMoney(mockAccountRepo.Object, mockNotificationService.Object);
 
@@ -26,7 +26,7 @@ namespace BankApp.Test.Features
             withdraw.Execute(fromAccountId, 300);
 
             //Assert
-            Assert.That(account.BalanceProperty, Is.EqualTo(700));
+            Assert.That(account.Balance, Is.EqualTo(700));
         }
         [Test]
         public void IfWithdrawMoneyIsNegative_ThenThrowsException()
@@ -36,7 +36,7 @@ namespace BankApp.Test.Features
 
             var myMock = new Mock<IAccountRepository>();
             const int intoAccountId = 5;
-            var account = new Account { Id = intoAccountId, BalanceProperty = 640 };
+            var account = new Account { Id = intoAccountId, Balance = 640 };
 
             myMock.Setup(x => x.GetAccountById(intoAccountId)).Returns(account);
 
@@ -46,7 +46,7 @@ namespace BankApp.Test.Features
             Assert.Throws<InvalidOperationException>(() => withdraw.Execute(intoAccountId, -230));
 
             // assert
-            Assert.That(account.BalanceProperty, Is.EqualTo(640));
+            Assert.That(account.Balance, Is.EqualTo(640));
         }
 
         [Test]
@@ -57,7 +57,7 @@ namespace BankApp.Test.Features
 
             var myMock = new Mock<IAccountRepository>();
             const int intoAccountId = 5;
-            var account = new Account { Id = intoAccountId, BalanceProperty = 850 };
+            var account = new Account { Id = intoAccountId, Balance = 850 };
 
             myMock.Setup(x => x.GetAccountById(intoAccountId)).Returns(account);
 
@@ -67,7 +67,7 @@ namespace BankApp.Test.Features
             Assert.Throws<InvalidOperationException>(() => withdraw.Execute(intoAccountId, 6000));
 
             // assert
-            Assert.That(account.BalanceProperty, Is.EqualTo(850));
+            Assert.That(account.Balance, Is.EqualTo(850));
         }
 
         [Test]
@@ -78,7 +78,7 @@ namespace BankApp.Test.Features
 
             var myMock = new Mock<IAccountRepository>();
             const int intoAccountId = 5;
-            var account = new Account { Id = intoAccountId, BalanceProperty = 0 };
+            var account = new Account { Id = intoAccountId, Balance = 0 };
 
             myMock.Setup(x => x.GetAccountById(intoAccountId)).Returns(account);
 
@@ -88,7 +88,7 @@ namespace BankApp.Test.Features
             Assert.Throws<InvalidOperationException>(() => withdraw.Execute(intoAccountId, 6000));
 
             // assert
-            Assert.That(account.BalanceProperty, Is.EqualTo(0));
+            Assert.That(account.Balance, Is.EqualTo(0));
         }
         [Test]
         public void CannotWithdrawMoney_IfFraudlentActivityIsDetected()
@@ -98,7 +98,7 @@ namespace BankApp.Test.Features
 
             var myMock = new Mock<IAccountRepository>();
             const int intoAccountId = 5;
-            var account = new Account { Id = intoAccountId, BalanceProperty = 100_000_000m };
+            var account = new Account { Id = intoAccountId, Balance = 100_000_000m };
 
             myMock.Setup(x => x.GetAccountById(intoAccountId)).Returns(account);
 
@@ -108,7 +108,7 @@ namespace BankApp.Test.Features
             Assert.Throws<InvalidOperationException>(() => deposite.Execute(intoAccountId, 6000));
 
             // assert
-            Assert.That(account.BalanceProperty, Is.EqualTo(100000000));
+            Assert.That(account.Balance, Is.EqualTo(100000000));
         }
 
 

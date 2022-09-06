@@ -31,7 +31,7 @@ namespace BankApp.Test.Services
         {
             // setup
             var repo = new InMemoryAccountRepository();
-            var account = new Account { Id = 10, BalanceProperty = 100 };
+            var account = new Account { Id = 10, Balance = 100 };
 
             // Act
             repo.Update(account);

@@ -16,37 +16,20 @@ namespace BankApp.Core.Domain
         /// <summary>
         /// The current balance of the account
         /// </summary>
-        public decimal _balance = 0;
-        public decimal BalanceProperty
-        {
-            get { return _balance; }
-        }
+        public decimal Balance { get; set; }
 
         /// <summary>
         /// Positive number that keeps track of total that has been withdrawn from account
         /// </summary>
-        public decimal _withdrawn = 0;
-        public decimal WithdrawnProperty
-        {
-            get { return _withdrawn; }
-        }
+        public decimal Withdrawn { get; set; }
 
         /// <summary>
         /// Positive number that keeps track of total that has been paid into account
         /// </summary>
         /// 
 
-        // Encapsulating our field.
-        //public decimal PaidIn
-        //{
-        //    get; 
-        //    private set;
-        //}
-        public decimal _paidIn = 0;
-        public decimal PaidInProperty
-        {
-            get { return _paidIn; }
-        }
+        public decimal PaidIn { get; set; }
+
 
         public virtual void Withdraw(decimal amount)
         {
@@ -56,15 +39,15 @@ namespace BankApp.Core.Domain
                 throw new Exception("Fraudlent activities have been detected in your account");
             if (amount < BalanceLimitForWithdraw)
                 throw new InvalidOperationException("The amount entered is negative");
-            if (_balance >= FraudulentActivityLimit)
+            if (Balance >= FraudulentActivityLimit)
                 throw new InvalidOperationException("You cannot withdraw any money from this account due to suspicious activities");
             if (amount == BalanceLimitForWithdraw)
                 throw new InvalidOperationException("You cannot withdraw an amount with the value of zero");
             
             if (amount == BalanceLimitForWithdraw)
                 throw new InvalidOperationException();
-            _balance = _balance - amount;
-            _withdrawn = _withdrawn + amount;
+            Balance = Balance - amount;
+            Withdrawn = Withdrawn + amount;
             
 
         }
@@ -73,7 +56,7 @@ namespace BankApp.Core.Domain
         {
             if (amount > PayInLimit)
                 throw new InvalidOperationException($"You cannot pay in more than {PayInLimit} in a single transaction");
-            if (_balance >= FraudulentActivityLimit)
+            if (Balance >= FraudulentActivityLimit)
                 throw new InvalidOperationException("You cannot pay in any money to this account due to Fraudlent activities");
             if (FraudulentActivityDectected())
                 throw new InvalidOperationException("Fraudlent activities have been detected in your account");
@@ -84,26 +67,24 @@ namespace BankApp.Core.Domain
             if (amount < 0)
                 throw new InvalidOperationException("The amount entered is negative");
 
-            _balance = _balance + amount;
-            _paidIn = _paidIn + amount;
-            
-           
+            Balance = Balance + amount;
+            PaidIn = PaidIn + amount;
         }
 
         public virtual bool CanWithdraw(decimal amount)
         {
-            var newBalance = _balance - amount;
+            var newBalance = Balance - amount;
             return newBalance >= BalanceLimitForWithdraw;
         }
 
         public bool IsLowBalance()
         {
-            return _balance < LowBalanceThreshold;
+            return Balance < LowBalanceThreshold;
         }
 
         public bool FraudulentActivityDectected()
         {
-            return _paidIn >= FraudulentActivityLimit;
+            return PaidIn >= FraudulentActivityLimit;
         }
     }
 }

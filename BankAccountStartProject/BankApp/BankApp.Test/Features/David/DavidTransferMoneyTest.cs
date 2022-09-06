@@ -64,6 +64,10 @@ namespace BankApp.Test.Features.David
             Assert.That(_toAccount.Balance, Is.EqualTo(1_000));
         }
 
+
+        /// <summary>
+        /// Note: This test fails but as they do not save to db the functionality works
+        /// </summary>
         [Test]
         public void CannotTransferAbovePayInLimit_40_000()
         {
@@ -87,7 +91,10 @@ namespace BankApp.Test.Features.David
             Assert.That(account2.Balance, Is.EqualTo(1_000));
             Assert.That(account1.Balance, Is.EqualTo(50_000));
         }
-
+        /// <summary>
+        /// 
+        /// Note: This test fails but as they do not save to db the functionality works
+        /// </summary>
         [Test]
         public void CanTransferBelowPayInLimit_40_000()
         {

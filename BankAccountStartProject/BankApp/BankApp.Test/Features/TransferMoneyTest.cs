@@ -19,8 +19,8 @@ namespace BankApp.Test.Features
 
             const int fromAccountId = 1;
             const int toAccountId = 2;
-            var account1 = new Account { Id = fromAccountId, BalanceProperty = 1000 };
-            var account2 = new Account { Id = toAccountId, BalanceProperty = 200 };
+            var account1 = new Account { Id = fromAccountId, Balance = 1000 };
+            var account2 = new Account { Id = toAccountId, Balance = 200 };
 
             mockAccountRepo.Setup(x => x.GetAccountById(fromAccountId)).Returns(account1);
             mockAccountRepo.Setup(x => x.GetAccountById(toAccountId)).Returns(account2);
@@ -31,7 +31,7 @@ namespace BankApp.Test.Features
             transfer.Execute(fromAccountId, toAccountId, 300);
 
             //Assert
-            Assert.That(account1.BalanceProperty, Is.EqualTo(700));
+            Assert.That(account1.Balance, Is.EqualTo(700));
         }
         [Test]
         public void IfTransferMoneyIsNegative_ThenThrowsException()
@@ -42,8 +42,8 @@ namespace BankApp.Test.Features
             var myMock = new Mock<IAccountRepository>();
             const int fromAccountId = 5;
             const int toAccountId = 4;
-            var account1 = new Account { Id = fromAccountId, BalanceProperty = 640 };
-            var account2 = new Account { Id = toAccountId, BalanceProperty = 640 };
+            var account1 = new Account { Id = fromAccountId, Balance = 640 };
+            var account2 = new Account { Id = toAccountId, Balance = 640 };
 
             myMock.Setup(x => x.GetAccountById(fromAccountId)).Returns(account1);
             myMock.Setup(x => x.GetAccountById(toAccountId)).Returns(account2);
@@ -54,7 +54,7 @@ namespace BankApp.Test.Features
             Assert.Throws<InvalidOperationException>(() => transfer.Execute(fromAccountId, toAccountId, -230));
 
             // assert
-            Assert.That(account1.BalanceProperty, Is.EqualTo(640));
+            Assert.That(account1.Balance, Is.EqualTo(640));
         }
 
         [Test]
@@ -77,7 +77,7 @@ namespace BankApp.Test.Features
             Assert.Throws<InvalidOperationException>(() => transfer.Execute(fromAccountId, toAccountId, 1000));
 
             // assert
-            Assert.That(account1.bal/*BalanceProperty*/, Is.EqualTo(640));
+            Assert.That(account1.Balance, Is.EqualTo(640));
         }
         [Test]
         public void IfAmountTransferredIsZero_ThrowAnException()
@@ -88,8 +88,8 @@ namespace BankApp.Test.Features
             var myMock = new Mock<IAccountRepository>();
             const int fromAccountId = 5;
             const int toAccountId = 4;
-            var account1 = new Account { Id = fromAccountId, BalanceProperty = 640 };
-            var account2 = new Account { Id = toAccountId, BalanceProperty = 700 };
+            var account1 = new Account { Id = fromAccountId, Balance = 640 };
+            var account2 = new Account { Id = toAccountId, Balance = 700 };
             myMock.Setup(x => x.GetAccountById(fromAccountId)).Returns(account1);
             myMock.Setup(x => x.GetAccountById(toAccountId)).Returns(account2);
 
@@ -99,7 +99,7 @@ namespace BankApp.Test.Features
             Assert.Throws<InvalidOperationException>(() => transfer.Execute(fromAccountId, toAccountId, 0));
 
             // assert
-            Assert.That(account1.BalanceProperty, Is.EqualTo(640));
+            Assert.That(account1.Balance, Is.EqualTo(640));
         }
 
         [Test]
@@ -111,8 +111,8 @@ namespace BankApp.Test.Features
             var myMock = new Mock<IAccountRepository>();
             const int fromAccountId = 5;
             const int toAccountId = 4;
-            var account1 = new Account { Id = fromAccountId, BalanceProperty = 100_000_000 };
-            var account2 = new Account { Id = toAccountId, BalanceProperty = 700 };
+            var account1 = new Account { Id = fromAccountId, Balance = 100_000_000 };
+            var account2 = new Account { Id = toAccountId, Balance = 700 };
             myMock.Setup(x => x.GetAccountById(fromAccountId)).Returns(account1);
             myMock.Setup(x => x.GetAccountById(toAccountId)).Returns(account2);
 
@@ -122,7 +122,7 @@ namespace BankApp.Test.Features
             Assert.Throws<InvalidOperationException>(() => transfer.Execute(fromAccountId, toAccountId, 1000));
 
             // assert
-            Assert.That(account1.BalanceProperty, Is.EqualTo(100_000_000));
+            Assert.That(account1.Balance, Is.EqualTo(100_000_000));
         }
     }
 } 
