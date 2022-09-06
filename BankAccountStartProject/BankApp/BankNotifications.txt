@@ -1,2 +1,1 @@
-t@gmail.com: Your account with id '3' has low funds.t@gmail.com:
- We have detected fraudlent activity on your account with id '3'.akfl@gmail.com: Your account with id '3003' has low funds.a@gmail.com: Your account with id '1' has low funds.j@gmail.com: Your account with id '2' has low funds.
+a@gmail.com: We have detected fraudlent activity on your account with id '1'.

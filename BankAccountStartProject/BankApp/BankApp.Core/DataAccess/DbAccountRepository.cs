@@ -47,7 +47,7 @@ namespace BankApp.Core.DataAccess
                 }
                 else
                 {
-                    throw new Exception();
+                    throw new Exception("We cannot register an email with that format");
                 }
             }
                
@@ -58,14 +58,25 @@ namespace BankApp.Core.DataAccess
             using (var dbcontext = new BankContext())
             {
                 var check = dbcontext.AccountDbs.SingleOrDefault(x => x.Id == accountId);
-                var account = new Account() { 
+                
+
+                var account = new Account()
+                { 
                     Id = check.Id,
                     Email = check.Email,
-                    BalanceProperty = check.Balance,
-                    WithdrawnProperty = check.Withdrawn,
-                    PaidInProperty = check.PaidIn
+                    _balance = check.Balance,
+                    _withdrawn = check.Withdrawn,
+                    _paidIn = check.PaidIn
                 };
-                return account;   
+                if(check.Id == account.Id)
+                {
+                    return account;
+                }
+                else
+                {
+                    throw new Exception("The ID entered was not found");
+                }
+                   
             }
         }
 
