@@ -26,6 +26,10 @@ namespace BankApp.Core.Features
             {
                 throw new InvalidOperationException("The amount you entered is negative");
             }
+            else if(amount == 0)
+            {
+                throw new Exception("You cannot pay in an amount of value zero");
+            }
             
             else
             {
