@@ -12,12 +12,13 @@ namespace BankApp.Test.Features.David
         private Account _fromAccount;
         private Account _toAccount;
         private TransferMoney _transfer;
+        private Mock<INotificationService> _mockNotificationService;
 
         [SetUp]
         public void Setup()
         {
             // Setup
-            var mockNotificationService = new Mock<INotificationService>();
+            _mockNotificationService = new Mock<INotificationService>();
             var mockAccountRepo = new Mock<IAccountRepository>();
 
             const int fromAccountId = 1;
@@ -28,7 +29,7 @@ namespace BankApp.Test.Features.David
             mockAccountRepo.Setup(x => x.GetAccountById(fromAccountId)).Returns(_fromAccount);
             mockAccountRepo.Setup(x => x.GetAccountById(toAccountId)).Returns(_toAccount);
 
-            _transfer = new TransferMoney(mockAccountRepo.Object, mockNotificationService.Object);
+            _transfer = new TransferMoney(mockAccountRepo.Object, _mockNotificationService.Object);
         }
 
         [Test]
@@ -40,6 +41,7 @@ namespace BankApp.Test.Features.David
             //Assert
             Assert.That(_fromAccount.Balance, Is.EqualTo(7_000));
             Assert.That(_toAccount.Balance, Is.EqualTo(4_000));
+            _mockNotificationService.Verify(service => service.NotifyFundsLow(It.IsAny<Account>()), Times.Never());
         }
 
         [Test]
