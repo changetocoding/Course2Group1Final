@@ -84,7 +84,7 @@ namespace BankApp.Core.DataAccess
         {
             using (var dbcontext = new BankContext())
             {
-                return  dbcontext.AccountDbs.Select(x => new Account() { Id = x.Id}).ToList();
+                return  dbcontext.AccountDbs.Select(x => new Account() { Id = x.Id, Email = x.Email, _balance = x.Balance, _paidIn = x.PaidIn, _withdrawn = x.Withdrawn}).ToList();
             }
         }
 

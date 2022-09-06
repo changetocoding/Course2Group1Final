@@ -1,1 +1,1 @@
-a@gmail.com: We have detected fraudlent activity on your account with id '1'.
+a@gmail.com: We have detected fraudlent activity on your account with id '1'.abigail@gmail.com: Your account with id '4003' has low funds.abigail@gmail.com: Your account with id '4003' has low funds.patrick@gmail.com: Your account with id '4004' has low funds.michael@gmail.com: Your account with id '4005' has low funds.michael@gmail.com: Your account with id '4005' has low funds.patrick@gmail.com: Your account with id '4004' has low funds.
