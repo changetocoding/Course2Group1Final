@@ -57,8 +57,14 @@ namespace BankApp.Core.DataAccess
         {
             using (var dbcontext = new BankContext())
             {
-                var check = dbcontext.AccountDbs.Where(x => x.Id == accountId).SingleOrDefault();
-                var account = new Account() { Id = check.Id };
+                var check = dbcontext.AccountDbs.SingleOrDefault(x => x.Id == accountId);
+                var account = new Account() { 
+                    Id = check.Id,
+                    Email = check.Email,
+                    BalanceProperty = check.Balance,
+                    WithdrawnProperty = check.Withdrawn,
+                    PaidInProperty = check.PaidIn
+                };
                 return account;   
             }
         }
@@ -76,14 +82,14 @@ namespace BankApp.Core.DataAccess
             using (var dbcontext = new BankContext())
             {
                 var dbObject = dbcontext.AccountDbs.SingleOrDefault(x => x.Id == account.Id);
-                if(dbObject is null)
+                if(dbObject == null)
                 {
                     throw new Exception("Id not found");
                 }
 
-                dbObject.Balance = account.Balance;
-                dbObject.PaidIn = account.PaidIn;
-                dbObject.Withdrawn = account.Withdrawn;
+                dbObject.Balance = account.BalanceProperty;
+                dbObject.PaidIn = account.PaidInProperty;
+                dbObject.Withdrawn = account.WithdrawnProperty;
 
                 dbcontext.SaveChanges();
 

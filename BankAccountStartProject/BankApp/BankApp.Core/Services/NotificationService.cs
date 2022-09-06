@@ -5,6 +5,7 @@ namespace BankApp.Core.Services
     // DO NOT CHANGE THIS CLASS
     public class NotificationService : INotificationService
     {
+        
         private readonly List<Notification> _notifications;
         public NotificationService()
         {

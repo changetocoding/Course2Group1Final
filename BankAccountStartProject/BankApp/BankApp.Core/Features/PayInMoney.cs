@@ -24,7 +24,7 @@ namespace BankApp.Core.Features
             }
             else if(amount < 0)
             {
-                throw new InvalidOperationException();
+                throw new InvalidOperationException("The amount you entered is negative");
             }
             
             else

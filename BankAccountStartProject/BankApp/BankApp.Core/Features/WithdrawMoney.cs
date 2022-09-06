@@ -25,7 +25,7 @@ namespace BankApp.Core.Features
             // ToDo
 
 
-            if (from.CanWithdraw(amount) && from.Balance > 0)
+            if (from.CanWithdraw(amount) && from.BalanceProperty > 0)
             {
                 from.Withdraw(amount);
             }
@@ -39,7 +39,7 @@ namespace BankApp.Core.Features
             {
                 throw new InvalidOperationException("You cannot withdraw an amount with value of 0");
             }
-            else if(amount > from.Balance)
+            else if(amount > from.BalanceProperty)
             {
                 throw new InvalidOperationException("You cannot withdraw more money than your balance");
             }

@@ -22,7 +22,7 @@ namespace BankApp.Core.Features
 
 
 
-            if (from.CanWithdraw(amount) && from.Balance > 0 && amount > 0)
+            if (from.CanWithdraw(amount) && from.BalanceProperty > 0 && amount > 0)
             {
                 from.Withdraw(amount);
                 to.PayIn(amount);
@@ -36,7 +36,7 @@ namespace BankApp.Core.Features
             {
                 throw new InvalidOperationException("You cannot transfer an amount with a value of 0");
             }
-            else if(amount > from.Balance)
+            else if(amount > from.BalanceProperty)
             {
                 throw new InvalidOperationException("You cannot transfer amounts greater than your balance");
             }
