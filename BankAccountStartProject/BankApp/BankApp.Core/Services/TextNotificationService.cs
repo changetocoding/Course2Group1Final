@@ -19,8 +19,7 @@ namespace BankApp.Core.Services
                 var filePath = @"C:\Users\Student\Documents\BankNotifications.txt";
 
                 return GetAllNotifications();
-            } 
-            
+            }   
         }
         public void NotifyFraudlentActivity(Account account)
         {
@@ -58,7 +57,5 @@ namespace BankApp.Core.Services
             
             throw new NotImplementedException();
         }
-        
-
     }
 }

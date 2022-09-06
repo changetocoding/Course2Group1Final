@@ -92,7 +92,6 @@ namespace BankApp.Core.DataAccess
                 dbObject.Withdrawn = account.WithdrawnProperty;
 
                 dbcontext.SaveChanges();
-
             }
         }
     }
