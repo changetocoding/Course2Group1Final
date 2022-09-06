@@ -16,6 +16,7 @@ builder.Services.AddSwaggerGen();
 // Dependencies:
 // For more info see: https://scribe.nixnet.services/projectwt/simple-dependency-injection-in-net-6-0-web-api-24164e56f8f8
 builder.Services.AddScoped<INotificationService, NotificationService>();
+builder.Services.AddScoped<INotificationService, TextNotificationService>();
 
 // TODO: In phase 2 you ill need to change this to your new IAccountRepository implementation
 builder.Services.AddScoped<IAccountRepository, DbAccountRepository>();

@@ -51,7 +51,7 @@ namespace MoneyBox.ConsoleApp
                 }
                 else if ("notifications".Equals(instruction, StringComparison.CurrentCultureIgnoreCase))
                 {
-                    Notifications(notificationService);
+                    NewNotifications(args);
                 }               
             }
         }  
@@ -149,7 +149,7 @@ namespace MoneyBox.ConsoleApp
                 var accountId = Convert.ToInt32(accountIdStr);
 
                 var account = repo.GetAccountById(accountId);
-                Console.WriteLine($"Your balance is: {account.Balance}");
+                Console.WriteLine($"Your balance is: {account._balance}");
             }
             catch (AccountNotFoundException ex)
             {

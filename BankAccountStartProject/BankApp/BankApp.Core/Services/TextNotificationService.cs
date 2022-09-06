@@ -11,16 +11,15 @@ namespace BankApp.Core.Services
     public class TextNotificationService : INotificationService
     {
 
-       // TextWriter path = new StreamWriter(@"C:\Users\Student\Documents\BankNotifications.txt", true);
+        // TextWriter path = new StreamWriter(@"C:\Users\Student\Documents\BankNotifications.txt", true);
         public IEnumerable<Notification> GetAllNotifications()
         {
-           using (TextWriter path = new StreamWriter(@"C:\Users\Student\source\repos\BankAccountStartProject\BankApp\BankNotifications.txt", true))  
-           {
+            using (TextWriter path = new StreamWriter(@"C:\Users\Student\source\repos\BankAccountStartProject\BankApp\BankNotifications.txt", true))
+            {
                 var filePath = @"C:\Users\Student\Documents\BankNotifications.txt";
-
-                return GetAllNotifications();
-            } 
-            
+                
+            }
+            return GetAllNotifications();
         }
         public void NotifyFraudlentActivity(Account account)
         {
@@ -34,7 +33,7 @@ namespace BankApp.Core.Services
                 };
                 path.Write(notification.Message, notification.AccountId, notification.Email);
                 path.Close();
-            }   
+            }
         }
 
         public void NotifyFundsLow(Account account)
@@ -55,10 +54,8 @@ namespace BankApp.Core.Services
         public IEnumerable<Notification> GetNotificationsForEmail(string emailAddress)
         {
             var paths = @"C:\Users\Student\source\repos\BankAccountStartProject\BankApp\BankNotifications.txt";
-            
+
             throw new NotImplementedException();
         }
-        
-
     }
 }
