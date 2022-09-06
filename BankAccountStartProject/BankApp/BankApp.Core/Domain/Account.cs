@@ -5,7 +5,7 @@ namespace BankApp.Core.Domain
     public class Account
     {
         public const decimal FraudulentActivityLimit = 100_000_000m;
-        public const decimal PayInLimit = 40000m;
+        public const decimal PayInLimit = 100000000m;
         public const decimal LowBalanceThreshold = 500m;
         public const decimal BalanceLimitForWithdraw = 0m;
 
@@ -16,16 +16,31 @@ namespace BankApp.Core.Domain
         /// The current balance of the account
         /// </summary>
         public decimal Balance { get; set; }
+        public decimal BalanceProperty
+        {
+            get { return Balance; }
+            set { Balance = value; }
+        }
 
         /// <summary>
         /// Positive number that keeps track of total that has been withdrawn from account
         /// </summary>
         public decimal Withdrawn { get; set; }
+        public decimal WithdrawnProperty
+        {
+            get { return Withdrawn; }
+            set { Withdrawn = value; }
+        }
 
         /// <summary>
         /// Positive number that keeps track of total that has been paid into account
         /// </summary>
         public decimal PaidIn { get; set; }
+        public decimal PaidInProperty
+        {
+            get { return PaidIn; }
+            set { PaidIn = value; }
+        }
 
         public virtual void Withdraw(decimal amount)
         {
@@ -33,7 +48,7 @@ namespace BankApp.Core.Domain
                 throw new InvalidOperationException("Insufficient funds to withdraw");
             if (FraudulentActivityDectected())
                 throw new Exception("Fraudlent activities have been detected in your account");
-            if (amount <= BalanceLimitForWithdraw)
+            if (amount < BalanceLimitForWithdraw)
                 throw new InvalidOperationException("The amount entered is negative");
             if (Balance >= FraudulentActivityLimit)
                 throw new InvalidOperationException("You cannot withdraw any money from this account due to suspicious activities");

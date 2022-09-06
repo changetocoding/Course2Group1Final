@@ -15,7 +15,12 @@
       "ProjectGuid": "f041ee9e-c481-4fd0-a9c1-2de9ee324d39",
       "DisplayName": "UserRegistration.Data",
       "ColorIndex": 2
+    },
+    "a02caed8-ad18-43e7-a7b0-f5f5b8374d0a": {
+      "ProjectGuid": "a02caed8-ad18-43e7-a7b0-f5f5b8374d0a",
+      "DisplayName": "UserRegistionApp.Web",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 4
 }
